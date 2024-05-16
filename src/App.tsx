@@ -1,26 +1,28 @@
-import React from 'react';
-import './App.css';
-import Header from './layout/Header';
-import Footer from './layout/Footer';
-import Display from './component/Display';
+import React from 'react'
+import { BrowserRouter, Routes,Route } from 'react-router-dom'
+import Header from './layout/Header'
+import Home from './component/pages/Home/Home'
+import Product from './component/pages/products/Product'
+import Pricing from './component/pages/pricing/Pricing'
+import Contact from './component/pages/contact/Contact'
+import About from './component/pages/aboutus/About'
 
 
-function App() {
-  const handleclick=() =>{
-    console.log("you clicked me daddy")
-  }
+
+const App = () => {
   return (
-    <div>
-        <Header />
-        <Display  
-        FirstName={"prabesh"}
-        Lastname={"kc"}
-        onclick={handleclick}
+    <BrowserRouter>
+        <Header/>
+    <Routes>
+        <Route path="/" element={<Home />}/>
+            <Route path="/contact" element={<Contact/>} />
+            <Route path="/pricing" element={<Pricing/>} />
+            <Route path="/products" element={<Product/>} />
+            <Route path="/aboutus" element={<About/>} />
 
-        />
-        <Footer />
-    </div>
-  );
+    </Routes>
+    </BrowserRouter>
+  )
 }
 
-export default App;
+export default App
