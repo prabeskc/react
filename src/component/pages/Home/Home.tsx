@@ -22,7 +22,7 @@ const Home = () => {
         buttonName="change to red"
         colourChange={() => setColour("bg-red-500")}
       />
-
+      
 <Colour
         buttonName="change to yellow"
         colourChange={() => setColour("bg-yellow-500")}
