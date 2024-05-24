@@ -1,12 +1,16 @@
 import React from 'react'
 import { BrowserRouter, Routes,Route } from 'react-router-dom'
 import Header from './layout/Header'
-import Home from './component/pages/Home/Home'
-import Product from './component/pages/products/Product'
-import Pricing from './component/pages/pricing/Pricing'
-import Contact from './component/pages/contact/Contact'
-import About from './component/pages/aboutus/About'
-import SingleProduct from './component/pages/products/product-details'
+import Home from './pages/Home/Home'
+import Contact from './pages/contact/Contact'
+import Pricing from './pages/pricing/Pricing'
+import Product from './pages/products/Product'
+import SingleProduct from './pages/products/product-details'
+import Post from './pages/Post/Post'
+import PostDetails from './pages/Post/PostDetail'
+import About from './pages/aboutus/About'
+import PostDetailPage from './pages/Post/PostDetail'
+
 
 
 
@@ -20,6 +24,8 @@ const App = () => {
             <Route path="/pricing" element={<Pricing/>} />
             <Route path="/products" element={<Product/>} />
             <Route path="/products/:id" element={<SingleProduct/>} />
+            <Route path="/Post" element={<Post />} />
+            <Route path="/Post/:id" element={<PostDetailPage />} />
             <Route path="/aboutus" element={<About/>} />
 
     </Routes>
