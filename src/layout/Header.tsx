@@ -1,7 +1,10 @@
+// import { Button } from 'flowbite-react'
 import path from 'path'
 import { title } from 'process'
 import React from 'react'
 import { Link, useLocation} from 'react-router-dom'
+import Button from '../component/reusable/button/button'
+
 
 const NavItems= [
 {
@@ -53,8 +56,6 @@ const Header = () => {
               to={items.path}
               className={`${items.path===location.pathname ? "text-blue-700" :"text-black"} block py-2 px -3 rounded md:bg-transparent md:p-0`}
               aria-current="page">{items.title}</Link>
-            
-    
             </li>
           )
         )
@@ -62,6 +63,24 @@ const Header = () => {
           
       </ul>
     </div>
+
+    <div className='flex gap-2 items-center'>
+        <Button
+        buttonType={"button"}
+        buttonColor={{primary:true}}
+        rounded>
+          Sign In
+        </Button>
+        
+
+        <Button
+        buttonType={"button"}
+        buttonColor={{outline:true}}
+        rounded>
+          Register
+        </Button>
+    </div>
+
   </div>
 </nav>
 
