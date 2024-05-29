@@ -10,6 +10,8 @@ import Post from './pages/Post/Post'
 import PostDetails from './pages/Post/PostDetail'
 import About from './pages/aboutus/About'
 import PostDetailPage from './pages/Post/PostDetail'
+import Signin from './pages/signin/Signin'
+import Register from './pages/register/Register'
 
 
 
@@ -18,7 +20,7 @@ const App = () => {
   return (
     <BrowserRouter>
         <Header/>
-    <Routes>
+      <Routes>
         <Route path="/" element={<Home />}/>
             <Route path="/contact" element={<Contact/>} />
             <Route path="/pricing" element={<Pricing/>} />
@@ -27,8 +29,11 @@ const App = () => {
             <Route path="/Post" element={<Post />} />
             <Route path="/Post/:id" element={<PostDetailPage />} />
             <Route path="/aboutus" element={<About/>} />
+            <Route path="/signin" element={<Signin/>} />
+            <Route path="/register" element={<Register/>} />
 
-    </Routes>
+      
+      </Routes>
     </BrowserRouter>
   )
 }

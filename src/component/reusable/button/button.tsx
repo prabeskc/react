@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import React from 'react'
 
-interface Props{
+interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement>{
     buttonType:'button' | 'reset' | 'submit',
     rounded?:boolean,
     children:any,
@@ -13,9 +13,10 @@ interface Props{
     }
 }
 
-const Button = ({buttonType,rounded, children ,buttonColor}:Props) => {
+const Button = ({buttonType,rounded, children ,buttonColor,...rest}:Props) => {
   return (
     <button
+    {...rest}
         type={buttonType}
         className={classNames('px-4 py-2',
         buttonColor.primary && "bg-amber-500 text-white",
