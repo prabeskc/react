@@ -12,6 +12,8 @@ import About from './pages/aboutus/About'
 import PostDetailPage from './pages/Post/PostDetail'
 import Signin from './pages/signin/Signin'
 import Register from './pages/register/Register'
+import { NOTFOUND } from 'dns'
+import NotFound from './pages/notfound/NotFound'
 
 
 
@@ -22,6 +24,7 @@ const App = () => {
         <Header/>
       <Routes>
         <Route path="/" element={<Home />}/>
+        <Route path="*" element ={<NotFound/>}/>
             <Route path="/contact" element={<Contact/>} />
             <Route path="/pricing" element={<Pricing/>} />
             <Route path="/products" element={<Product/>} />
