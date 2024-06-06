@@ -86,6 +86,15 @@ useEffect(()=>{
           >
             Register</Button>
             </Link>
+            <Link to="/dashboard">
+            <Button 
+          buttonType={"button"}
+          buttonColor={islogin?{outline :true}:{secondary:true}}
+          rounded
+          // onClick={()=>setIsLogin(false)}
+          >
+            Dashboard</Button>
+            </Link>
         </div>
       </div>
     </nav>

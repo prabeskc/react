@@ -14,6 +14,9 @@ import Signin from './pages/signin/Signin'
 import Register from './pages/register/Register'
 import { NOTFOUND } from 'dns'
 import NotFound from './pages/notfound/NotFound'
+import Dashboard from './pages/dashboard/dashboard'
+import Authlayout from './layout/auth-layout/authlayout'
+import Defaultlayout from './layout/default/default'
 
 
 
@@ -21,21 +24,31 @@ import NotFound from './pages/notfound/NotFound'
 const App = () => {
   return (
     <BrowserRouter>
-        <Header/>
+
       <Routes>
-        <Route path="/" element={<Home />}/>
         <Route path="*" element ={<NotFound/>}/>
+
+        <Route element={<Defaultlayout/>}>
+        <Route path="/" element={<Home />}/>
+         </Route>
+
+
             <Route path="/contact" element={<Contact/>} />
             <Route path="/pricing" element={<Pricing/>} />
+
             <Route path="/products" element={<Product/>} />
             <Route path="/products/:id" element={<SingleProduct/>} />
+
             <Route path="/Post" element={<Post />} />
             <Route path="/Post/:id" element={<PostDetailPage />} />
             <Route path="/aboutus" element={<About/>} />
+
             <Route path="/signin" element={<Signin/>} />
             <Route path="/register" element={<Register/>} />
 
-      
+            <Route element={<Authlayout/>}>
+            <Route path="/dashboard" element={<Dashboard/>} />
+             </Route>
       </Routes>
     </BrowserRouter>
   )
